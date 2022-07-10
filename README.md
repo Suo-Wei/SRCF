@@ -25,6 +25,16 @@ Organize them in `dataset` folder as follows:
    python ./dataset/process_CUHK_data.py
    ~~~
    
+### building BERT
+~~~
+pip install transformers
+mkdir bert_weight
+~~~
+
+Downland the bert [weight and config](https://huggingface.co/bert-base-uncased/tree/main), put them into SRCF/bert_weight
+
+
+   
 #### Training and Testing
 ~~~
 sh experiments/CUHK-PEDES/train.sh 

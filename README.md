@@ -57,7 +57,7 @@ bash run/test.bash
 If this work is helpful for your research, please cite our work:
 
 ~~~
-@InProceedings{Suo_ECCV_ASample,
+@InProceedings{Suo_ECCV_A,
 author = {Suo, Wei and Sun, MengYang and Niu, Kai, et.al},
 title = {A Simple and Robust Correlation Filtering method for text-based person search},
 booktitle = {The European Conference on Computer Vision (ECCV)},

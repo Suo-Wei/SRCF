@@ -35,11 +35,11 @@ Downland the bert [weight and config](https://huggingface.co/bert-base-uncased/t
 
 
    
-#### Training and Testing
+### Training and Testing
 ~~~
 bash run/train.bash 
 ~~~
-#### Evaluation
+### Evaluation
 ~~~
 bash run/test.bash
 ~~~
@@ -66,5 +66,5 @@ year = {2022}
 }
 ~~~
 
-#### References
+### References
 [SSAN](https://github.com/zifyloo/SSAN/)

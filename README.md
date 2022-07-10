@@ -57,11 +57,12 @@ bash run/test.bash
 If this work is helpful for your research, please cite our work:
 
 ~~~
-@article{ding2021semantically,
-  title={Semantically Self-Aligned Network for Text-to-Image Part-aware Person Re-identification},
-  author={Ding, Zefeng and Ding, Changxing and Shao, Zhiyin and Tao, Dacheng},
-  journal={arXiv preprint arXiv:2107.12666},
-  year={2021}
+@InProceedings{Suo_ECCV_ASample,
+author = {Suo, Wei and Sun, MengYang and Niu, Kai, et.al},
+title = {A Simple and Robust Correlation Filtering method for text-based person search},
+booktitle = {The European Conference on Computer Vision (ECCV)},
+month = {August},
+year = {2022}
 }
 ~~~
 

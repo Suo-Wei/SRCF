@@ -228,7 +228,7 @@ class TextImgPersonReidNet(nn.Module):
         else:
             return img_global, img_local, img_non_local, txt_global, txt_local, txt_non_local
 
-    def compute_start_end_gumbel(self,img4,image=True,txt_lang=None,train=True,epoch=None):
+    def compute_global_local(self,img4,image=True,txt_lang=None,train=True,epoch=None):
 
         fine_tune_start = 25
         if image:
@@ -299,9 +299,9 @@ class TextImgPersonReidNet(nn.Module):
         image_feature_global = self.global_avgpool(image_feature)  # b,2048,1
         image_global = self.conv_global(image_feature_global).unsqueeze(2)  # b,1024
         if self.training:
-            image_feature_local,part_response,global_mutual = self.compute_start_end_gumbel(torch.cat([image_feature],dim=0),image=True,train=self.training,epoch=epoch)
+            image_feature_local,part_response,global_mutual = self.compute_global_local(torch.cat([image_feature],dim=0),image=True,train=self.training,epoch=epoch)
         else:
-            image_feature_local,part_response,global_mutual = self.compute_start_end_gumbel(image_feature,image=True,train=self.training)
+            image_feature_local,part_response,global_mutual = self.compute_global_local(image_feature,image=True,train=self.training)
 
         image_feature_local = torch.cat(image_feature_local,dim=2)
         image_local = []
@@ -332,9 +332,9 @@ class TextImgPersonReidNet(nn.Module):
         text_global = self.global_avgpool(text_feature_l)  # 64,2048
         text_global = self.conv_global(text_global).unsqueeze(2)  # 64,1024
         if self.training:
-            text_feature_local,part_response,global_mutual = self.compute_start_end_gumbel(text_feature_l.squeeze().permute(2,0,1),image=False,txt_lang=text_length,train=self.training,epoch=epoch)
+            text_feature_local,part_response,global_mutual = self.compute_global_local(text_feature_l.squeeze().permute(2,0,1),image=False,txt_lang=text_length,train=self.training,epoch=epoch)
         else:
-            text_feature_local,_ = self.compute_start_end_gumbel(text_feature_l.squeeze().permute(2,0,1),image=False,txt_lang=text_length,train=self.training,epoch=epoch)
+            text_feature_local,_ = self.compute_global_local(text_feature_l.squeeze().permute(2,0,1),image=False,txt_lang=text_length,train=self.training,epoch=epoch)
 
         text_feature_local = torch.cat(text_feature_local, dim=-1)#b,2048,6
         text_local = []

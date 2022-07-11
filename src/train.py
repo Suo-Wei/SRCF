@@ -51,11 +51,9 @@ def train(opt):
     opt.mode = 'train'
 
     id_loss_fun_global = Id_Loss(opt, 1, opt.feature_length).to(opt.device)
-    id_loss_fun_global_qiyu = Id_Loss(opt, 1, opt.feature_length).to(opt.device)
-    id_loss_fun_global_f3 = Id_Loss(opt,1,opt.feature_length).to(opt.device)
+    #id_loss_fun_global_f3 = Id_Loss(opt,1,opt.feature_length).to(opt.device)
     id_loss_fun_local = Id_Loss(opt, opt.part, opt.feature_length).to(opt.device)
     id_loss_fun_non_local = Id_Loss(opt, opt.part, 512).to(opt.device)
-    # id_loss_fun_global_swap = Id_Loss(opt, opt.part, opt.feature_length).to(opt.device)
     cr_loss_fun = CRLoss(opt)
     network = TextImgPersonReidNet(opt).to(opt.device)
 

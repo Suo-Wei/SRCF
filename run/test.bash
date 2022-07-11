@@ -1,5 +1,3 @@
-
-
 python src/test.py --model_name 'SRCF' \
 --GPU_id 0 \
 --part 6 \

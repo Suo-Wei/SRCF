@@ -40,7 +40,7 @@ class options():
 
         self._par.add_argument('--save_path', type=str, default='./checkpoints/test',
                                help='save the result during training')
-        self._par.add_argument('--GPU_id', type=str, default='2', help='choose GPU ID [0 1]')
+        self._par.add_argument('--GPU_id', type=str, default='0', help='choose GPU ID')
         self._par.add_argument('--device', type=str, default='', help='cuda devie')
         self._par.add_argument('--dataset', type=str, help='choose the dataset ')
         self._par.add_argument('--dataroot', type=str,  help='data root of the Data')

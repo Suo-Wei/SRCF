@@ -5,6 +5,10 @@
 # A Simple and Robust Correlation Filtering method for text-based person search
 We provide the code for reproducing results of our ECCV 2022 paper [A Simple and Robust Correlation Filtering method for text-based person search](www.baidu.com). Compared with the original paper, we obtain better performance due to some modifications. Following our global response map, we also add the same mutual-exclusion-loss to separate body part response map. Adjusted method achieve new state-of-the-art performance and it improves to 64.89 on Top-1 (CUHK-PEDES).
 ## Getting Started
+### Requirements
+- [PyTorch](https://pytorch.org/) 1.4 or higher
+- [transformers](https://huggingface.co/docs/transformers/index) (install with `pip install transformers`)
+
 ### Dataset Preparation
 
 Organize them in `dataset` folder as follows:
@@ -27,7 +31,6 @@ Organize them in `dataset` folder as follows:
    
 ### Building BERT
 ~~~
-pip install transformers
 mkdir bert_weight
 ~~~
 
@@ -48,9 +51,9 @@ bash run/test.bash
 
 |CUHK-PEDES | performance |
 |------|------|
-| `Top-1` | 64.89 |
-| `Top-5` | 82.84 |
-| `Top-10` | 88.93 |
+| `Top-1` | 64.70 |
+| `Top-5` | 82.86 |
+| `Top-10` | 88.63 |
 
 ## Citation
 

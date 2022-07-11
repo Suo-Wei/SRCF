@@ -1,8 +1,5 @@
 # -*- coding: utf-8 -*-
-"""
 
-@author: zifyloo
-"""
 import transformers as ppb
 import math
 from torch import nn

@@ -3,7 +3,7 @@
 ![PyTorch](https://img.shields.io/badge/pytorch-1.4.0-%237732a8) 
 
 # A Simple and Robust Correlation Filtering method for text-based person search
-We provide the code for reproducing results of our ECCV 2022 paper [A Simple and Robust Correlation Filtering method for text-based person search](www.baidu.com). Compared with the original paper, we obtain better performance due to some modifications. Following our global response map, we also add the same mutual-exclusion-loss to separate body part response map. Adjusted method achieve new state-of-the-art performance and it improves to 64.89 on Top-1 (CUHK-PEDES).
+We provide the code for reproducing results of our ECCV 2022 paper [A Simple and Robust Correlation Filtering method for text-based person search](www.baidu.com). Compared with the original paper, we obtain better performance due to some modifications. Following our global response map, we also add the same mutual-exclusion-loss to separate body part response map. Adjusted method achieve new state-of-the-art performance and it improves to 64.88 on Top-1 without [re-rank](https://github.com/TencentYoutuResearch/PersonReID-NAFS?utm_source=catalyzex.com) (CUHK-PEDES).
 ## Getting Started
 ### Requirements
 - [PyTorch](https://pytorch.org/) 1.4 or higher
@@ -35,9 +35,7 @@ Organize them in `dataset` folder as follows:
 mkdir bert_weight
 ~~~
 
-Downland the bert [weight and config](https://huggingface.co/bert-base-uncased/tree/main), put them into SRCF/bert_weight
-
-
+Downland the [weight and config](https://huggingface.co/bert-base-uncased/tree/main), put them into SRCF/bert_weight
    
 ### Training and Testing
 ~~~
@@ -52,9 +50,9 @@ bash run/test.bash
 
 |CUHK-PEDES | performance |
 |------|------|
-| `Top-1` | 64.70 |
-| `Top-5` | 82.86 |
-| `Top-10` | 88.63 |
+| `Top-1` | 64.88 |
+| `Top-5` | 83.02 |
+| `Top-10` | 88.56 |
 
 ## Citation
 

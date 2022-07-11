@@ -247,7 +247,7 @@ class TextImgPersonReidNet(nn.Module):
                     part_axis.append(head.unsqueeze(0))
                 part_axis = torch.cat(part_axis,dim=0).t()
                 embed = 0.99*self.end_img.detach() + 0.01*part_axis
-                self.end_img = embed.detach()#0.99*self.end_img+0.01*part_axis
+                self.end_img = embed.detach()
                 part_response = (F.normalize(foreground,dim=-1)*5) @ (F.normalize(embed,dim=0)*5)
             else:
                 part_response = (F.normalize(foreground,dim=-1)*5) @ (F.normalize(self.end_img.detach(),dim=0)*5)
@@ -277,7 +277,7 @@ class TextImgPersonReidNet(nn.Module):
                     part_axis = torch.cat(part_axis,dim=0).t()
                     weights = 0.99 + (((self.opt.batch_size - 1) / self.opt.batch_size) * 0.01)
                     embed = weights * self.end_txt.detach() + (1-weights) * part_axis
-                    self.end_txt = embed.detach()##.detach()#xishu * self.end_txt + (1-xishu) * part_axis
+                    self.end_txt = embed.detach()
                     part_response = (F.normalize(foreground,dim=-1)*5) @ (F.normalize(embed,dim=0)*5)
                 else:
                     part_response = (F.normalize(foreground,dim=-1)*5) @ (F.normalize(self.end_txt.detach(),dim=0)*5)

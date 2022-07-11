@@ -1,7 +1,4 @@
 # -*- coding: utf-8 -*-
-"""
-@author: zifyloo
-"""
 
 from option.options import options, config
 from data.dataloader import get_dataloader

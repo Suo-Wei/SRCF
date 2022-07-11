@@ -8,7 +8,7 @@ from data.dataloader import get_dataloader
 import torch.nn.functional as F
 import torch
 import torch.nn as nn
-from model.model_our import TextImgPersonReidNet
+from model.model import TextImgPersonReidNet
 from loss.Id_loss import Id_Loss
 from loss.RankingLoss import CRLoss
 from torch import optim

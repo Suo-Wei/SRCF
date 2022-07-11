@@ -8,7 +8,7 @@ We provide the code for reproducing results of our ECCV 2022 paper [A Simple and
 ### Requirements
 - [PyTorch](https://pytorch.org/) 1.4 or higher
 - [transformers](https://huggingface.co/docs/transformers/index) (install with `pip install transformers`)
-- numpy,torchvision
+- numpy, torchvision
 
 ### Dataset Preparation
 

@@ -63,7 +63,7 @@ def train(opt):
     other_params.extend(list(id_loss_fun_global.parameters()))
     other_params.extend(list(id_loss_fun_local.parameters()))
     other_params.extend(list(id_loss_fun_non_local.parameters()))
-    other_params.extend(list(id_loss_fun_global_f3.parameters()))
+#     other_params.extend(list(id_loss_fun_global_f3.parameters()))
     param_groups = [{'params': other_params, 'lr': opt.lr},
                     {'params': network.ImageExtract.parameters(), 'lr': opt.lr * 0.1}]
 

@@ -95,7 +95,7 @@ def train(opt):
             img_part_response,txt_part_response,img_global_response,txt_global_response = network(image, caption_code, caption_length,epoch=epoch)
 
 
-            txt_global_cr, txt_local_cr, txt_non_local_cr,txt_f3_cr,txt_part_response_cr, txt_global_response_cr= network.txt_embedding(caption_code_cr, caption_length_cr,epoch=epoch)
+            txt_global_cr, txt_local_cr, txt_non_local_cr,txt_part_response_cr, txt_global_response_cr= network.txt_embedding(caption_code_cr, caption_length_cr,epoch=epoch)
             img_part = F.normalize(img_part_response,dim=1)
             img_part = img_part.permute(0,2,1) @ img_part
             img_part_loss = add_loss(img_part,torch.eye((opt.part)).repeat(opt.batch_size,1,1).to(opt.device))

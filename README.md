@@ -4,7 +4,7 @@
 
 # A Simple and Robust Correlation Filtering method for text-based person search
 We provide the code for reproducing results of our ECCV 2022 paper [A Simple and Robust Correlation Filtering method for text-based person search](https://www.ecva.net/papers/eccv_2022/papers_ECCV/papers/136950719.pdf). 
-Compared with the original paper, we obtain better performance due to some modifications. Following our global response map, we also add the same mutual-exclusion-loss to separate body part response map. Meanwhile, we merge the global filter and dictionary filter module. The adjusted method achieve a new state-of-the-art performance and it improves to 64.88 on Top-1 *without* [Re-Rank](https://github.com/TencentYoutuResearch/PersonReID-NAFS?utm_source=catalyzex.com) (CUHK-PEDES).
+Compared with the original paper, we obtain better performance due to some modifications. Following our global response map, we also add the same mutual-exclusion-loss to separate body part response map. Meanwhile, we merge the global filter and dictionary filter module. The adjusted method achieves a new state-of-the-art performance and it improves to 64.88 on Top-1 *without* [Re-Rank](https://github.com/TencentYoutuResearch/PersonReID-NAFS?utm_source=catalyzex.com) (CUHK-PEDES).
 ## Getting Started
 ### Requirements
 - [PyTorch](https://pytorch.org/) 1.4 or higher

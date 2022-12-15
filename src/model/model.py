@@ -3,7 +3,6 @@
 import transformers as ppb
 import math
 from torch import nn
-from model.text_feature_extract import TextExtract
 from torchvision import models
 import torch
 from torch.nn import init
